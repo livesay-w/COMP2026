@@ -1,0 +1,10 @@
+L=8: training at m2*(8) = -3.936 (lam = 1.0)
+step     0   loss  -50.1538   std(log q + S)  0.9385   ESS 0.235   (0 s)
+step   250   loss  -50.4320   std(log q + S)  0.7857   ESS 0.586   (32 s)
+step   500   loss  -50.6144   std(log q + S)  0.8254   ESS 0.400   (66 s)
+step   750   loss  -50.5144   std(log q + S)  0.7665   ESS 0.629   (97 s)
+step  1000   loss  -50.6209   std(log q + S)  0.9671   ESS 0.243   (128 s)
+step  1250   loss  -50.4858   std(log q + S)  0.7759   ESS 0.478   (159 s)
+step  1500   loss  -50.6981   std(log q + S)  0.5605   ESS 0.698   (189 s)
+  saved runs/fixed_u4_L8.pt  (192 s)
+  500000 proposals + chain in 76 s, acceptance 0.554

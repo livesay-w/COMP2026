@@ -1,0 +1,6 @@
+stage 0: L=8 m2=-2.60 already done (crit_sym_L8_m-2.60.pt)
+stage 1: L=8 m2=-3.20 already done (crit_sym_L8_m-3.20.pt)
+stage 2: L=8 m2=-3.80 already done (crit_sym_L8_m-3.80.pt)
+stage 3: L=16 m2=-3.80 already done (crit_sym_L16_m-3.80.pt)
+L=8: 500000 proposals + chain in 91 s, acceptance 0.452
+L=16: 500000 proposals + chain in 310 s, acceptance 0.205

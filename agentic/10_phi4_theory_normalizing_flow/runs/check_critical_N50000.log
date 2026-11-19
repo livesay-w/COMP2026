@@ -1,0 +1,9 @@
+--- L = 8, m2 = -3.800: flow-MCMC acceptance 0.404, ESS of the proposals 0.012
+    U4   Metropolis    0.5835 ± 0.0034   flow raw    0.6267 ± 0.0003 (z  +12.6)   flow MCMC    0.5565 ± 0.0152 (z  -1.7)
+    chi  Metropolis   23.6426 ± 0.3052   flow raw   24.9631 ± 0.0399 (z   +4.3)   flow MCMC   21.7741 ± 0.8581 (z  -2.1)
+[2] tau_int(M^2): flow MCMC 366.2 proposals -> 3 tau per block (need >= 10);   Metropolis 52.2 sweeps
+Traceback (most recent call last):
+  File "c:\Users\wrl62\COMP2026\agentic\10_phi4_theory_normalizing_flow\check_critical.py", line 47, in <module>
+    assert per_block >= 10
+           ^^^^^^^^^^^^^^^
+AssertionError

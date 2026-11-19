@@ -1,0 +1,38 @@
+stage 0: L=8 m2=-2.60, 800 steps
+step     0   loss  -29.2290   std(log q + S)  1.2051   ESS 0.315   (0 s)
+step   250   loss  -30.0913   std(log q + S)  0.9764   ESS 0.526   (18 s)
+step   500   loss  -29.7171   std(log q + S)  1.2712   ESS 0.312   (37 s)
+step   750   loss  -29.8993   std(log q + S)  1.1130   ESS 0.420   (55 s)
+  saved crit_L8_m-2.60.pt  (60 s)
+stage 1: L=8 m2=-3.20, 800 steps
+step     0   loss  -36.0907   std(log q + S)  1.4254   ESS 0.096   (0 s)
+step   250   loss  -37.0845   std(log q + S)  1.4606   ESS 0.108   (19 s)
+step   500   loss  -36.5664   std(log q + S)  1.5540   ESS 0.263   (37 s)
+step   750   loss  -37.2346   std(log q + S)  1.3954   ESS 0.226   (55 s)
+  saved crit_L8_m-3.20.pt  (59 s)
+stage 2: L=8 m2=-3.80, 1500 steps
+step     0   loss  -44.4373   std(log q + S)  1.7739   ESS 0.068   (0 s)
+step   250   loss  -46.5519   std(log q + S)  1.0589   ESS 0.438   (18 s)
+step   500   loss  -46.7862   std(log q + S)  1.1254   ESS 0.369   (37 s)
+step   750   loss  -46.9966   std(log q + S)  1.0567   ESS 0.152   (55 s)
+step  1000   loss  -46.8609   std(log q + S)  1.0266   ESS 0.335   (74 s)
+step  1250   loss  -46.8770   std(log q + S)  0.9955   ESS 0.503   (92 s)
+step  1500   loss  -46.9131   std(log q + S)  0.8505   ESS 0.463   (110 s)
+  saved crit_L8_m-3.80.pt  (110 s)
+stage 3: L=16 m2=-3.80, 3000 steps
+step     0   loss -187.2403   std(log q + S)  1.6324   ESS 0.042   (0 s)
+step   250   loss -188.1487   std(log q + S)  1.6781   ESS 0.069   (31 s)
+step   500   loss -187.7997   std(log q + S)  1.5281   ESS 0.260   (61 s)
+step   750   loss -188.1052   std(log q + S)  1.6318   ESS 0.088   (93 s)
+step  1000   loss -187.6595   std(log q + S)  1.9229   ESS 0.177   (123 s)
+step  1250   loss -188.1429   std(log q + S)  1.8521   ESS 0.024   (154 s)
+step  1500   loss -188.1998   std(log q + S)  1.5563   ESS 0.186   (184 s)
+step  1750   loss -188.2063   std(log q + S)  1.4944   ESS 0.135   (214 s)
+step  2000   loss -188.2986   std(log q + S)  1.5360   ESS 0.095   (244 s)
+step  2250   loss -187.9871   std(log q + S)  1.4262   ESS 0.271   (275 s)
+step  2500   loss -188.0347   std(log q + S)  1.2929   ESS 0.393   (305 s)
+step  2750   loss -188.4552   std(log q + S)  1.3194   ESS 0.256   (335 s)
+step  3000   loss -188.1006   std(log q + S)  1.2654   ESS 0.198   (366 s)
+  saved crit_L16_m-3.80.pt  (366 s)
+L=8: 50000 proposals + chain in 8 s, acceptance 0.482
+L=16: 50000 proposals + chain in 29 s, acceptance 0.219

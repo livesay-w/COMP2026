@@ -1,0 +1,11 @@
+[1] metropolis_magnetization reproduces metropolis bit for bit
+[2] m2=+1: U4 = 0.0095 +- 0.0154   (expected 0.0000, tol 0.05)
+[2] m2=-8: U4 = 0.6658 +- 0.0000   (expected 0.6667, tol 0.01)
+[3] block length 3000 sweeps; max tau_int(M^2) = 219.1 (L=16, m2=-3.750)
+[4] L=8: worst step in U4 = +0.1 sigma (must be > -3)
+[4] L=16: worst step in U4 = -2.3 sigma (must be > -3)
+[5] U4(16) - U4(8): -3.6 sigma at m2=-2.00, +76.0 sigma at m2=-5.50
+    one significant sign change -> crossing at m2 ~ -3.815
+    U4 at crossing ~ 0.589   (2D Ising: 0.61069)
+    chi(16)/chi(8) at crossing ~ 3.30   (2D Ising: 2^(7/4) = 3.36; symmetric phase -> 1, broken -> 4)
+All step-6a checks passed.

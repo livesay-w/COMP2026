@@ -1,0 +1,12 @@
+--- L = 8, m2 = -3.800: flow-MCMC acceptance 0.452, ESS of the proposals 0.054
+    U4   Metropolis    0.5835 ± 0.0034   flow raw    0.6264 ± 0.0001 (z  +12.5)   flow MCMC    0.5908 ± 0.0027 (z  +1.7)
+    chi  Metropolis   23.6426 ± 0.3052   flow raw   24.9118 ± 0.0083 (z   +4.2)   flow MCMC   23.8492 ± 0.1744 (z  +0.6)
+[2] tau_int(M^2): flow MCMC 48.0 proposals -> 208 tau per block (need >= 10);   Metropolis 52.2 sweeps
+[3] fraction with M > 0: proposals 0.501   flow MCMC 0.495 ± 0.002   (exact 0.5)
+--- L = 16, m2 = -3.800: flow-MCMC acceptance 0.205, ESS of the proposals 0.000
+    U4   Metropolis    0.5930 ± 0.0043   flow raw    0.6546 ± 0.0000 (z  +14.2)   flow MCMC    0.6243 ± 0.0054 (z  +4.5)
+Traceback (most recent call last):
+  File "C:\Users\wrl62\COMP2026\agentic\10_phi4_theory_normalizing_flow\check_critical.py", line 41, in <module>
+    assert abs(z_mcmc) < 3, f"L={L} {name}: flow MCMC disagrees with Metropolis"
+           ^^^^^^^^^^^^^^^
+AssertionError: L=16 U4: flow MCMC disagrees with Metropolis

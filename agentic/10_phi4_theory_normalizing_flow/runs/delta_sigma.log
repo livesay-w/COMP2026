@@ -1,0 +1,13 @@
+fixed U4 = 0.61069 (2D Ising), lam = 1, 6b chains, joint jackknife over 50 blocks
+  L= 8: m2* = -3.9357 ± 0.0055   chi* =   28.41 ± 0.12   (quadratic:   28.43)
+  L=12: m2* = -3.8797 ± 0.0067   chi* =   54.41 ± 0.36   (quadratic:   54.70)
+  L=16: m2* = -3.8488 ± 0.0086   chi* =   86.28 ± 1.13   (quadratic:   86.38)
+  L=24: m2* = -3.8359 ± 0.0037   chi* =  170.06 ± 1.27   (quadratic:  170.10)
+  L=32: m2* = -3.8191 ± 0.0023   chi* =  268.46 ± 1.71   (quadratic:  270.25)
+  L= 8,16: Delta_sigma_eff = 0.1986 ± 0.0100   (quadratic: 0.1983)
+  L=12,24: Delta_sigma_eff = 0.1780 ± 0.0065   (quadratic: 0.1817)
+  L=16,32: Delta_sigma_eff = 0.1812 ± 0.0110   (quadratic: 0.1772)
+  extrapolated, omega = 1.00: Delta_sigma = 0.1580 ± 0.0285   a = +0.309   (exact 1/8 = 0.125)
+  extrapolated, omega = 1.75: Delta_sigma = 0.1693 ± 0.0166   a = +1.064   (exact 1/8 = 0.125)
+  extrapolated, omega = 2.00: Delta_sigma = 0.1711 ± 0.0147   a = +1.682   (exact 1/8 = 0.125)
+saved runs/delta_sigma.npz

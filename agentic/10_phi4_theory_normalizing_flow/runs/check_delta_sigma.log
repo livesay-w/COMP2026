@@ -1,0 +1,18 @@
+[1] synthetic: max |m2* - m2_c| = 0.0e+00   max |dse - 1/8| = 4.7e-15   max |Delta_sigma - 1/8| = 1.2e-15   max |a| = 6.9e-14
+    fit of 1/8 + 0.7 L^(-7/4): Delta_sigma = 0.125000000000, a = 0.700000000000
+[2] L=8: max relative difference to binder_chi (values and errors) = 0.0e+00
+[2] L=32: max relative difference to binder_chi (values and errors) = 0.0e+00
+[3] chi*: quadratic - linear = L=8: +0.16 sigma  L=12: +0.81 sigma  L=16: +0.09 sigma  L=24: +0.03 sigma  L=32: +1.05 sigma
+    Delta_sigma_eff: quadratic - linear = 8,16: -0.04 sigma  12,24: +0.57 sigma  16,32: -0.36 sigma
+[4] m2*(L): L=8: -3.9357 ± 0.0055  L=12: -3.8797 ± 0.0067  L=16: -3.8488 ± 0.0086  L=24: -3.8359 ± 0.0037  L=32: -3.8191 ± 0.0023   (6b crossing: -3.806 ± 0.011)
+[5] Delta_sigma (omega = 7/4) = 0.1693 ± 0.0166   (1/8: z = +2.7);   omega = 1.0: 0.1580  omega = 1.75: 0.1693  omega = 2.0: 0.1711
+    U4 target 0.58000: Delta_sigma_eff 0.183±0.018  0.170±0.009  0.163±0.012   extrapolated 0.155 ± 0.019
+    U4 target 0.59000: Delta_sigma_eff 0.203±0.007  0.159±0.013  0.155±0.009   extrapolated 0.130 ± 0.012
+    U4 target 0.60000: Delta_sigma_eff 0.197±0.017  0.162±0.012  0.168±0.018   extrapolated 0.148 ± 0.028
+    U4 target 0.61069: Delta_sigma_eff 0.199±0.010  0.178±0.006  0.181±0.011   extrapolated 0.169 ± 0.017
+[6] L=8, m2 = -3.936: flow-MCMC acceptance 0.554
+    U4   Metropolis (interpolated)   0.6108 ± 0.0016   flow MCMC   0.6169 ± 0.0021   z = +2.3
+    chi  Metropolis (interpolated)  28.4235 ± 0.1796   flow MCMC  28.8665 ± 0.1748   z = +1.8
+    flow-MCMC U4 = 0.6169 vs the target U4* = 0.61069 (m2 was set from the Metropolis data)
+    112 tau_int per jackknife block (need >= 10);   fraction M > 0 = 0.496 ± 0.002
+All step-7 checks passed.
