@@ -1,0 +1,18 @@
+﻿[1] L=8: |phi| unchanged, 33 clusters each flipped as a unit, 33 bonds all between equal signs within one cluster
+[2] SW            <M^2> = 0.34578 ± 0.00083 (exact 0.34536, z = +0.5);   max |z| over the 15 <s_0 s_x> = 2.8
+[2] control, J/2  <M^2> = 0.10425 ± 0.00041 (exact 0.34536, z = -586.5);   max |z| over the 15 <s_0 s_x> = 238.3
+[3] free L=8, m2=0.1: acceptance 0.627;  k = 0: 10.035 ± 0.533 (exact 10.000);  max |z| over all 64 momenta = 2.43
+[4] L=8, m2=-3.8: acceptance 0.421;  tau_int(M^2) = 14.49 updates (cluster) vs 52.2 sweeps (Metropolis)
+    U4   cluster   0.5811 ± 0.0018   Metropolis   0.5835 ± 0.0034   z = -0.6
+    chi  cluster  23.1262 ± 0.1812   Metropolis  23.6426 ± 0.3052   z = -1.5
+python.exe : Traceback (most recent call last):
+At line:1 char:302
++ ... tch {} } }; & "C:\Program Files\Python311\python.exe" -u check_cluste ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\wrl62\COMP2026\agentic\10_phi4_theory_normalizing_flow\check_cluster.py", line 94, in <module>
+    assert tau_cl < tau_met / 5
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError

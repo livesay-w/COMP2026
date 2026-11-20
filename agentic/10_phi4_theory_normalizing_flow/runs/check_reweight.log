@@ -1,0 +1,13 @@
+﻿[1] free theory, E          : max |z| over 9 m2 values: chi 0.7, <E> 0.4   (m2 = 0.35: chi 3.059 ± 0.042 vs exact 3.077)
+[1] free theory, control, 2E: max |z| over 9 m2 values: chi 24.2, <E> 26.2   (m2 = 0.35: chi 3.306 ± 0.046 vs exact 3.077)
+[2] L= 16: leave-one-chain-out at 5 interior m2: U4 z = [ 0.5 -1.8  0.8 -0.2 -0.6]   chi z = [ 0.5 -0.8  0.6  0.3 -0.1]
+[2] L= 32: leave-one-chain-out at 5 interior m2: U4 z = [-0.7  0.  -0.2  0.6  0.6]   chi z = [-1.5  0.6 -0.2  0.4  0.2]
+[2] L= 64: leave-one-chain-out at 5 interior m2: U4 z = [ 0.2 -0.9 -1.6  0.5  0.1]   chi z = [ 0.  -1.  -0.4  1.7 -0.4]
+[2] L=128: leave-one-chain-out at 7 interior m2: U4 z = [-0.  -0.8  0.1  0.1  1.1  0.3  1.3]   chi z = [-0.4 -1.1  0.3 -0.7  1.3  0.4  1.2]
+    all 22 points: max |z| = 1.77, sum z^2 = 26.8 for 44 comparisons
+[3] L= 16: (mean gap between neighbouring chains) / std(E) = 0.20 at most
+[3] L= 32: (mean gap between neighbouring chains) / std(E) = 0.42 at most
+[3] L= 64: (mean gap between neighbouring chains) / std(E) = 0.36 at most
+[3] L=128: (mean gap between neighbouring chains) / std(E) = 0.40 at most
+[4] THIN = 2: error(thinned) / error(full) for U4 and chi at all 30 chains: mean 1.0059 ± 0.0021, range 0.974 to 1.052;  tau_int(M^2) of the thinned L = 128 chains 9.1 to 12.2
+All step-7e reweighting checks passed.

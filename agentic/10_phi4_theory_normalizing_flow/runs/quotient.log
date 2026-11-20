@@ -1,0 +1,64 @@
+﻿  reweighting replica 0/50 done
+  reweighting replica 1/50 done
+  reweighting replica 2/50 done
+  reweighting replica 3/50 done
+  reweighting replica 4/50 done
+  reweighting replica 5/50 done
+  reweighting replica 6/50 done
+  reweighting replica 7/50 done
+  reweighting replica 8/50 done
+  reweighting replica 9/50 done
+  reweighting replica 10/50 done
+  reweighting replica 11/50 done
+  reweighting replica 12/50 done
+  reweighting replica 13/50 done
+  reweighting replica 14/50 done
+  reweighting replica 15/50 done
+  reweighting replica 16/50 done
+  reweighting replica 17/50 done
+  reweighting replica 18/50 done
+  reweighting replica 19/50 done
+  reweighting replica 20/50 done
+  reweighting replica 21/50 done
+  reweighting replica 22/50 done
+  reweighting replica 23/50 done
+  reweighting replica 24/50 done
+  reweighting replica 25/50 done
+  reweighting replica 26/50 done
+  reweighting replica 27/50 done
+  reweighting replica 28/50 done
+  reweighting replica 29/50 done
+  reweighting replica 30/50 done
+  reweighting replica 31/50 done
+  reweighting replica 32/50 done
+  reweighting replica 33/50 done
+  reweighting replica 34/50 done
+  reweighting replica 35/50 done
+  reweighting replica 36/50 done
+  reweighting replica 37/50 done
+  reweighting replica 38/50 done
+  reweighting replica 39/50 done
+  reweighting replica 40/50 done
+  reweighting replica 41/50 done
+  reweighting replica 42/50 done
+  reweighting replica 43/50 done
+  reweighting replica 44/50 done
+  reweighting replica 45/50 done
+  reweighting replica 46/50 done
+  reweighting replica 47/50 done
+  reweighting replica 48/50 done
+  reweighting replica 49/50 done
+  reweighting replica 50/50 done
+
+quotient method, lam = 1, cluster runs ('prod',), joint jackknife over 50 blocks
+  metropolis L=  8, 16 (linear    ): m2_x = -3.7727 ± 0.0086   U4_x = 0.5784 ± 0.0046   chi =    22.51,    70.32   Delta_sigma_eff = 0.1784 ± 0.0100   (linear 0.1784, quadratic 0.1829)
+  metropolis L= 12, 24 (linear    ): m2_x = -3.8109 ± 0.0100   U4_x = 0.5926 ± 0.0043   chi =    47.64,   152.28   Delta_sigma_eff = 0.1617 ± 0.0100   (linear 0.1617, quadratic 0.1607)
+  metropolis L= 16, 32 (linear    ): m2_x = -3.8024 ± 0.0098   U4_x = 0.5938 ± 0.0070   chi =    75.43,   243.65   Delta_sigma_eff = 0.1542 ± 0.0079   (linear 0.1542, quadratic 0.1611)
+  cluster    L= 16, 32 (reweighted): m2_x = -3.8104 ± 0.0008   U4_x = 0.5960 ± 0.0006   chi =    77.75,   250.80   Delta_sigma_eff = 0.1552 ± 0.0008   (linear 0.1537, quadratic 0.1548)
+  cluster    L= 32, 64 (reweighted): m2_x = -3.8212 ± 0.0003   U4_x = 0.6055 ± 0.0005   chi =   266.11,   882.50   Delta_sigma_eff = 0.1352 ± 0.0008   (linear 0.1393, quadratic 0.1380)
+  cluster    L= 64,128 (reweighted): m2_x = -3.8235 ± 0.0002   U4_x = 0.6094 ± 0.0006   chi =   903.97,  3023.05   Delta_sigma_eff = 0.1292 ± 0.0008   (linear 0.1263, quadratic 0.1247)
+  extrapolated, pairs L >=  8, omega = 1.00: Delta_sigma = 0.1192 ± 0.0009   a = +0.561   chi2/dof = 5.7/3   (exact 1/8 = 0.125)
+  extrapolated, pairs L >=  8, omega = 1.75: Delta_sigma = 0.1274 ± 0.0006   a = +3.405   chi2/dof = 17.5/3   (exact 1/8 = 0.125)
+  extrapolated, pairs L >=  8, omega = 2.00: Delta_sigma = 0.1289 ± 0.0005   a = +6.319   chi2/dof = 31.7/3   (exact 1/8 = 0.125)
+  extrapolated, pairs L >= 16, omega = 1.75: Delta_sigma = 0.1267 ± 0.0007   a = +3.647   chi2/dof = 0.0/1   (exact 1/8 = 0.125)
+saved runs/quotient.npz
