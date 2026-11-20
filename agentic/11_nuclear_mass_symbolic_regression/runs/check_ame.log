@@ -1,0 +1,12 @@
+[1] 3558 nuclides read of 3558 data lines;  measured 2550, estimated 1008;  Z = 0-118, A = 1-295
+[2] B from the mass-excess column vs the binding-energy column (measured): max |diff| = 0.013 keV
+[3] 2H     B =     2.2246 MeV   (textbook 2.22457)
+[3] 4He    B =    28.2957 MeV   (textbook 28.2957)
+[3] 12C    B =    92.1617 MeV   (textbook 92.1618)
+[3] 208Pb  B =  1636.4302 MeV   (textbook 1636.43)
+[4] largest B/A: 62Ni 8.7946 MeV,  58Fe 8.7923 MeV,  56Fe 8.7904 MeV
+[5] A =  12: lightest isobar has Z = 6  (stable: Z = 6)
+[5] A =  56: lightest isobar has Z = 26  (stable: Z = 26)
+[5] A = 100: lightest isobar has Z = 44  (stable: Z = 44)
+[5] A = 208: lightest isobar has Z = 82  (stable: Z = 82)
+All step-1 checks passed.

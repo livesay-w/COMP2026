@@ -1,0 +1,8 @@
+1 terms (volume, 3 nodes): EXACT at complexity 3;  best RMS 2.68e-05 MeV
+    A * 15.392653
+2 terms (volume + surface, 9 nodes): not found;  best RMS 1.90e-02 MeV
+    ((A + -109.80288) * ((log(A + 12.608291) * 0.42479977) + 11.056998)) + 1312.3142
+3 terms (volume + surface + Coulomb, 19 nodes): not found;  best RMS 5.87e-01 MeV
+    ((((((23.263136 - A) / Nn) - -10.040555) - (A * -0.021420894)) + (Z * -0.11099093)) * (Z - -3.229862)) + ((Nn * 12.663537) - 94.220726)
+4 terms (volume + surface + Coulomb + asymmetry, 29 nodes): not found;  best RMS 4.18e-01 MeV
+    ((((Z * ((log(Z) * -4.032705) - 3.5449204)) + 21.637228) * log(Z)) + (Nn * -11.276439)) - ((((((Z * 0.003520261) - (log(Z) * 2.1622756)) - 17.623142) * Z) * log(Nn)) + 0.003520261)

@@ -1,0 +1,15 @@
+[1] planted [15.  17.   0.7 23.  12. ] -> fitted [15.  17.   0.7 23.  12. ];  max |residual| = 4.5e-11 MeV
+[2] 2484 measured nuclei with A >= 16
+    a_V (volume   ) =  15.393 MeV   textbook 15.750   (-2.3%)
+    a_S (surface  ) =  16.478 MeV   textbook 17.800   (-7.4%)
+    a_C (Coulomb  ) =   0.694 MeV   textbook  0.711   (-2.5%)
+    a_A (asymmetry) =  22.645 MeV   textbook 23.700   (-4.5%)
+    a_P (pairing  ) =  12.110 MeV   textbook 11.180   (+8.3%)
+    RMS residual = 3.29 MeV, max |residual| = 26.1 MeV (B up to 1959 MeV, so 0.30% of the mean B)
+[3] nuclear radius from a_C: r0 = 1.246 fm  (electron scattering: ~1.2 fm)
+[4] mean residual (even-even, odd A, odd-odd): without pairing [ 1.23 -0.18 -1.2 ],  with [ 0.08 -0.16  0.01] MeV
+[5] RMS as terms are added: +volume 50.3,  +surface 28.5,  +Coulomb 26.0,  +asymmetry 3.4,  +pairing 3.3 MeV
+    A >=  2: coefficients [15.223 15.95   0.682 22.229 10.673],  RMS 3.65 MeV,  max |residual| 31.1 MeV
+    A >= 16: coefficients [15.393 16.478  0.694 22.645 12.11 ],  RMS 3.29 MeV,  max |residual| 26.1 MeV
+    A >= 40: coefficients [15.603 17.134  0.707 23.195 12.851],  RMS 3.02 MeV,  max |residual| 13.7 MeV
+All step-2 checks passed.

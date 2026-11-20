@@ -1,0 +1,6 @@
+1 terms (volume, 3 nodes): EXACT at complexity 3;  best RMS 2.68e-05 MeV
+    A * 15.392653
+2 terms (volume + surface, 9 nodes): not found;  best RMS 1.84e-02 MeV
+    (((A * 0.4380726) - 43.909706) * log((A + 11.572391) * 7.3700745e10)) + 1187.3075
+3 terms (volume + surface + Coulomb, 17 nodes): not found;  best RMS 3.92e-01 MeV
+    (Z * ((cbrt(Z) * (cbrt(Z) * -0.65417624)) - 2.7456717)) + (((cbrt(cbrt(Z)) * (A * 8.507162)) + A) - 21.161304)

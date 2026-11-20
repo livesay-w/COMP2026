@@ -1,0 +1,11 @@
+stage 1: kept (complexity 3) A / 0.12613833
+    joint fit: RMS 37.281 MeV (vs truth 37.281), held-out 69.996 MeV (+94.9%);  coefficients 0.9389 79.96
+stage 2: kept (complexity 8) (A + -62.768944) * log(78.06472 / Z)
+    joint fit: RMS 13.681 MeV (vs truth 13.681), held-out 36.322 MeV (+48.1%);  coefficients 0.9358 1.244 84.64
+stage 3: kept (complexity 9) (17.902557 - Nn) / ((1.1948239 ^ Z) / A)
+    joint fit: RMS 11.621 MeV (vs truth 11.621), held-out 30.589 MeV (+15.8%);  coefficients 0.9338 1.356 1.196 88.5
+stage 4: kept (complexity 19) ((A * 0.007625401) + -1.8344158) * (((A * 0.5735246) - (Nn + 3.0607667)) * ((A * 0.6084072) - Nn))
+    joint fit: RMS 6.142 MeV (vs truth 6.142), held-out 13.746 MeV (+55.1%);  coefficients 0.9307 1.33 1.134 1.034 91.24
+stage 5: kept (complexity 15) ((1.1695242 ^ Nn) * -3.3266212e-10) + (((Nn - Z) / (1.1918873 ^ Nn)) * A)
+    joint fit: RMS 5.116 MeV (vs truth 5.116), held-out 62.305 MeV (-353.2%);  coefficients 0.9338 1.332 1.152 1.014 1.209 88.01
+    held-out gain below 5%: stop (this last term is not kept)
