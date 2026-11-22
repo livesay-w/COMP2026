@@ -50,15 +50,16 @@
   reweighting replica 49/50 done
   reweighting replica 50/50 done
 
-quotient method, lam = 1, cluster runs ('prod',), joint jackknife over 50 blocks
+quotient method, lam = 1, cluster runs ('prod', 'prod256'), joint jackknife over 50 blocks
   metropolis L=  8, 16 (linear    ): m2_x = -3.7727 ± 0.0086   U4_x = 0.5784 ± 0.0046   chi =    22.51,    70.32   Delta_sigma_eff = 0.1784 ± 0.0100   (linear 0.1784, quadratic 0.1829)
   metropolis L= 12, 24 (linear    ): m2_x = -3.8109 ± 0.0100   U4_x = 0.5926 ± 0.0043   chi =    47.64,   152.28   Delta_sigma_eff = 0.1617 ± 0.0100   (linear 0.1617, quadratic 0.1607)
   metropolis L= 16, 32 (linear    ): m2_x = -3.8024 ± 0.0098   U4_x = 0.5938 ± 0.0070   chi =    75.43,   243.65   Delta_sigma_eff = 0.1542 ± 0.0079   (linear 0.1542, quadratic 0.1611)
   cluster    L= 16, 32 (reweighted): m2_x = -3.8104 ± 0.0008   U4_x = 0.5960 ± 0.0006   chi =    77.75,   250.80   Delta_sigma_eff = 0.1552 ± 0.0008   (linear 0.1537, quadratic 0.1548)
   cluster    L= 32, 64 (reweighted): m2_x = -3.8212 ± 0.0003   U4_x = 0.6055 ± 0.0005   chi =   266.11,   882.50   Delta_sigma_eff = 0.1352 ± 0.0008   (linear 0.1393, quadratic 0.1380)
   cluster    L= 64,128 (reweighted): m2_x = -3.8235 ± 0.0002   U4_x = 0.6094 ± 0.0006   chi =   903.97,  3023.05   Delta_sigma_eff = 0.1292 ± 0.0008   (linear 0.1263, quadratic 0.1247)
-  extrapolated, pairs L >=  8, omega = 1.00: Delta_sigma = 0.1192 ± 0.0009   a = +0.561   chi2/dof = 5.7/3   (exact 1/8 = 0.125)
-  extrapolated, pairs L >=  8, omega = 1.75: Delta_sigma = 0.1274 ± 0.0006   a = +3.405   chi2/dof = 17.5/3   (exact 1/8 = 0.125)
-  extrapolated, pairs L >=  8, omega = 2.00: Delta_sigma = 0.1289 ± 0.0005   a = +6.319   chi2/dof = 31.7/3   (exact 1/8 = 0.125)
-  extrapolated, pairs L >= 16, omega = 1.75: Delta_sigma = 0.1267 ± 0.0007   a = +3.647   chi2/dof = 0.0/1   (exact 1/8 = 0.125)
+  cluster    L=128,256 (reweighted): m2_x = -3.8233 ± 0.0001   U4_x = 0.6085 ± 0.0007   chi =  3006.75, 10099.77   Delta_sigma_eff = 0.1260 ± 0.0010   (linear 0.1261, quadratic 0.1264)
+  extrapolated, pairs L >=  8, omega = 1.00: Delta_sigma = 0.1204 ± 0.0006   a = +0.537   chi2/dof = 13.4/4   (exact 1/8 = 0.125)
+  extrapolated, pairs L >=  8, omega = 1.75: Delta_sigma = 0.1267 ± 0.0004   a = +3.519   chi2/dof = 26.9/4   (exact 1/8 = 0.125)
+  extrapolated, pairs L >=  8, omega = 2.00: Delta_sigma = 0.1279 ± 0.0004   a = +6.627   chi2/dof = 56.8/4   (exact 1/8 = 0.125)
+  extrapolated, pairs L >= 16, omega = 1.75: Delta_sigma = 0.1262 ± 0.0005   a = +3.733   chi2/dof = 1.7/2   (exact 1/8 = 0.125)
 saved runs/quotient.npz

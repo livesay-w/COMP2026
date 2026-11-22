@@ -1,18 +1,19 @@
-﻿[1] synthetic, d = 0.0: crossings and Delta_sigma_eff of all 6 pairs match the exact values (worst 3.1e-15)
-[1] synthetic, d = 0.02: crossings and Delta_sigma_eff of all 6 pairs match the exact values (worst 3.9e-15)
+﻿[1] synthetic, d = 0.0: crossings and Delta_sigma_eff of all 7 pairs match the exact values (worst 1.0e-14)
+[1] synthetic, d = 0.02: crossings and Delta_sigma_eff of all 7 pairs match the exact values (worst 4.4e-15)
     weighted fit of 1/8 + 0.7 L^(-7/4) returns (0.125, 0.7)
 [2] Metropolis (8,16): quotient 0.178386   7a pipeline at U4 = 0.5784: 0.178386   difference -3.3e-16
 [2] Metropolis (12,24): quotient 0.161709   7a pipeline at U4 = 0.5926: 0.161709   difference -1.0e-15
 [2] Metropolis (16,32): quotient 0.154232   7a pipeline at U4 = 0.5938: 0.154232   difference -6.7e-16
 [3] cluster vs Metropolis at 14 shared points (U4 and chi): max |z| = 2.85,  sum z^2 = 30.5 for 28 comparisons (U4 and chi of one chain are correlated)
     |z| > 2: L=32 m2=-3.8250 U4: z = -2.85
-[4] max tau_int(M^2) per L: L=16: 19.7  L=32: 20.5  L=64: 21.6  L=128: 24.3;   fewest tau per block = 124 (need >= 10);   worst first-vs-second-half |z| of <M^2> = 1.6
+[4] max tau_int(M^2) per L: L=16: 19.7  L=32: 20.5  L=64: 21.6  L=128: 24.3  L=256: 26.1;   fewest tau per block = 124 (need >= 10);   worst first-vs-second-half |z| of <M^2> = 1.6
 [5] met   8, 16: quadratic - linear = +0.45 sigma
 [5] met  12, 24: quadratic - linear = -0.10 sigma
 [5] met  16, 32: quadratic - linear = +0.88 sigma
 [5] clu  16, 32: linear 0.1537, quadratic 0.1548 vs reweighted 0.1552 ± 0.0008:  reweighted - linear = +1.7 sigma, quadratic - linear = +1.3 sigma (reported)
 [5] clu  32, 64: linear 0.1393, quadratic 0.1380 vs reweighted 0.1352 ± 0.0008:  reweighted - linear = -5.5 sigma, quadratic - linear = -1.8 sigma (reported)
 [5] clu  64,128: linear 0.1263, quadratic 0.1247 vs reweighted 0.1292 ± 0.0008:  reweighted - linear = +3.5 sigma, quadratic - linear = -1.8 sigma (reported)
+[5] clu 128,256: linear 0.1261, quadratic 0.1264 vs reweighted 0.1260 ± 0.0010:  reweighted - linear = -0.1 sigma, quadratic - linear = +0.3 sigma (reported)
 [6] (16,32): cluster 0.1552 ± 0.0008   Metropolis 0.1542 ± 0.0079   z = +0.1
 [7] met   8, 16: m2_x = -3.7727 ± 0.0086,  U4_x = 0.5784 ± 0.0046,  Delta_sigma_eff = 0.1784 ± 0.0100
 [7] met  12, 24: m2_x = -3.8109 ± 0.0100,  U4_x = 0.5926 ± 0.0043,  Delta_sigma_eff = 0.1617 ± 0.0100
@@ -20,13 +21,14 @@
 [7] clu  16, 32: m2_x = -3.8104 ± 0.0008,  U4_x = 0.5960 ± 0.0006,  Delta_sigma_eff = 0.1552 ± 0.0008
 [7] clu  32, 64: m2_x = -3.8212 ± 0.0003,  U4_x = 0.6055 ± 0.0005,  Delta_sigma_eff = 0.1352 ± 0.0008
 [7] clu  64,128: m2_x = -3.8235 ± 0.0002,  U4_x = 0.6094 ± 0.0006,  Delta_sigma_eff = 0.1292 ± 0.0008
-[8] pairs L >=  8, omega = 1.00: Delta_sigma = 0.1192 ± 0.0009  (z = -6.3 vs 1/8)   chi2/dof = 5.7/3
-[8] pairs L >=  8, omega = 1.75: Delta_sigma = 0.1274 ± 0.0006  (z = +4.1 vs 1/8)   chi2/dof = 17.5/3
-[8] pairs L >=  8, omega = 2.00: Delta_sigma = 0.1289 ± 0.0005  (z = +7.2 vs 1/8)   chi2/dof = 31.7/3
-[8] pairs L >= 16, omega = 1.75: Delta_sigma = 0.1267 ± 0.0007  (z = +2.6 vs 1/8)   chi2/dof = 0.0/1
+[7] clu 128,256: m2_x = -3.8233 ± 0.0001,  U4_x = 0.6085 ± 0.0007,  Delta_sigma_eff = 0.1260 ± 0.0010
+[8] pairs L >=  8, omega = 1.00: Delta_sigma = 0.1204 ± 0.0006  (z = -7.5 vs 1/8)   chi2/dof = 13.4/4
+[8] pairs L >=  8, omega = 1.75: Delta_sigma = 0.1267 ± 0.0004  (z = +3.9 vs 1/8)   chi2/dof = 26.9/4
+[8] pairs L >=  8, omega = 2.00: Delta_sigma = 0.1279 ± 0.0004  (z = +7.0 vs 1/8)   chi2/dof = 56.8/4
+[8] pairs L >= 16, omega = 1.75: Delta_sigma = 0.1262 ± 0.0005  (z = +2.5 vs 1/8)   chi2/dof = 1.7/2
 python.exe : Traceback (most recent call last):
-At line:1 char:302
-+ ... tch {} } }; & "C:\Program Files\Python311\python.exe" -u check_quotie ...
+At line:1 char:475
++ ... "`r")+1) }; & "C:\Program Files\Python311\python.exe" -u check_quotie ...
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError

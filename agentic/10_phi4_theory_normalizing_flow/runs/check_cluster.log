@@ -5,14 +5,5 @@
 [4] L=8, m2=-3.8: acceptance 0.421;  tau_int(M^2) = 14.49 updates (cluster) vs 52.2 sweeps (Metropolis)
     U4   cluster   0.5811 ± 0.0018   Metropolis   0.5835 ± 0.0034   z = -0.6
     chi  cluster  23.1262 ± 0.1812   Metropolis  23.6426 ± 0.3052   z = -1.5
-python.exe : Traceback (most recent call last):
-At line:1 char:302
-+ ... tch {} } }; & "C:\Program Files\Python311\python.exe" -u check_cluste ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
-  File "C:\Users\wrl62\COMP2026\agentic\10_phi4_theory_normalizing_flow\check_cluster.py", line 94, in <module>
-    assert tau_cl < tau_met / 5
-           ^^^^^^^^^^^^^^^^^^^^
-AssertionError
+[5] checkpointed chain (5 save/reload cycles) vs uninterrupted: records identical True, final field identical True, acceptance 0.414948 vs 0.414948
+All step-7d cluster checks passed.

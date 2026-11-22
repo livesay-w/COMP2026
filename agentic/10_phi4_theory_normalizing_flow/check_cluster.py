@@ -93,4 +93,28 @@ for name, (cv, ce), (mv, me) in zip(("U4", "chi"), binder_chi(M_cl, L), binder_c
     print(f"    {name:4s} cluster {cv:8.4f} ± {ce:.4f}   Metropolis {mv:8.4f} ± {me:.4f}   z = {zz:+.1f}")
     assert abs(zz) < 3
 
+
+# 5. Checkpointing (cluster_scan.py): a chain saved to disk and reloaded after every 70 updates, crossing the end of
+#    thermalisation, must equal one uninterrupted cluster_chain run with the same seed, bit for bit (records, final field,
+#    acceptance count). A resume that dropped the RNG state, the field or the update counter would break this.
+import tempfile
+from cluster_scan import advance, load_state, new_state, save_state
+
+L, m2, lam, n_upd, n_th, step, seed = 8, -3.8, 1.0, 300, 40, 1.5, 7
+ref, ref_phi, ref_acc = cluster_chain(L, m2, lam, n_upd, n_th, step, np.random.default_rng([seed, L, round(-m2 * 1e5)]),
+                                      m_and_phi2)
+params = (m2, lam, n_upd, n_th, step, seed)
+with tempfile.TemporaryDirectory() as tmp:
+    path = Path(tmp) / "chain.ckpt.npz"
+    state, n_reloads = new_state(L, m2, n_upd, seed), 0
+    while state["t"] < n_th + n_upd:
+        advance(state, L, m2, lam, n_upd, n_th, step, 70)
+        save_state(path, state, params)
+        state, n_reloads = load_state(path, params, n_upd), n_reloads + 1
+acc = state["n_accept"] / (n_upd * L * L)
+print(f"[5] checkpointed chain ({n_reloads} save/reload cycles) vs uninterrupted: records identical "
+      f"{np.array_equal(state['rec'], ref)}, final field identical {np.array_equal(state['phi'], ref_phi)}, "
+      f"acceptance {acc:.6f} vs {ref_acc:.6f}")
+assert np.array_equal(state["rec"], ref) and np.array_equal(state["phi"], ref_phi) and acc == ref_acc
+
 print("All step-7d cluster checks passed.")

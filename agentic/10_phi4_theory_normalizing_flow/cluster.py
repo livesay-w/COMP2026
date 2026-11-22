@@ -44,6 +44,13 @@ def sw_step(phi, rng):
     return phi * sign[labels], labels
 
 
+def update(phi, masks, m2, lam, step, rng):
+    """One update: local Metropolis sweep (no global flip), then one SW step. Returns (phi, Metropolis acceptances)."""
+    phi, n_acc = sweep_once(phi, masks, m2, lam, step, rng, flip=False)
+    phi, _ = sw_step(phi, rng)
+    return phi, n_acc
+
+
 def cluster_chain(L, m2, lam, n_updates, n_therm, step, rng, measure):
     """Markov chain of updates (Metropolis sweep, then SW step), starting from a random field.
 
@@ -55,8 +62,7 @@ def cluster_chain(L, m2, lam, n_updates, n_therm, step, rng, measure):
     records = np.empty((n_updates,) + np.shape(measure(phi)))
     n_accept = 0
     for t in range(n_therm + n_updates):
-        phi, n_acc = sweep_once(phi, masks, m2, lam, step, rng, flip=False)
-        phi, _ = sw_step(phi, rng)
+        phi, n_acc = update(phi, masks, m2, lam, step, rng)
         if t >= n_therm:
             records[t - n_therm] = measure(phi)
             n_accept += n_acc

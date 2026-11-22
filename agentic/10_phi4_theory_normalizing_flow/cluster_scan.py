@@ -13,6 +13,7 @@ import os
 # here uses BLAS; with one thread a worker commits ~36 MB.
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
+import json
 import sys
 import time
 from multiprocessing import Pool
@@ -20,7 +21,8 @@ from pathlib import Path
 
 import numpy as np
 
-from cluster import cluster_chain, m_and_phi2
+from cluster import m_and_phi2, update
+from phi4 import checkerboard_np
 
 RUNS = Path(__file__).parent / "runs"
 GRID_6B = np.linspace(-3.65, -4.0, 15)  # the 6b Metropolis grid (scan.py "fine")
@@ -54,7 +56,7 @@ CONFIGS = {
     # (16,32), (32,64), (64,128), so (128,256) should cross near -3.825 to -3.827; the grid covers -3.812 ... -3.840, inside
     # the L = 128 grid. Spacing from the reweighting overlap: std(E) grows ~L (73 at L = 128, so ~150 here), and 0.004 puts
     # neighbouring E means ~0.6 std apart (0.2-0.4 at L <= 128; check_reweight.py [2], [3]). tau_int ~ 25 updates, so 200k
-    # updates give > 150 tau per block. Cost: ~15 ms/update alone, ~25 ms with 8 workers -> ~1.5 h on 8 workers.
+    # updates give > 150 tau per block. Cost: measured 40 ms/update with 8 chains in parallel (15 ms alone) -> ~2.3 h.
     # Run: python -u cluster_scan.py prod256 8   then add "prod256" to quotient.CLUSTER_RUNS.
     "prod256": dict(grids={256: np.round(np.linspace(-3.812, -3.840, 8), 5)}, lam=1.0,
                     n_updates={256: 200000}, n_therm={256: 3000}, step=1.5, seed=13),
@@ -65,16 +67,72 @@ def point_file(name, L, m2):
     return RUNS / f"cluster_{name}" / f"L{L}_m{round(-m2 * 1e5):06d}.npz"
 
 
+# Checkpointing (added after the laptop died 30 min into the first L = 256 run, losing all 8 chains): every chain saves its
+# full state (field, RNG state, records so far) every CHECKPOINT_EVERY updates, and a rerun resumes from there. The resumed
+# chain uses the same random stream, so it is bit-for-bit the uninterrupted chain (check_cluster.py [5]).
+CHECKPOINT_EVERY = 5000  # updates; ~3.5 min at L = 256 with 8 workers
+
+
+def checkpoint_file(name, L, m2):
+    return point_file(name, L, m2).with_suffix(".ckpt.npz")
+
+
+def new_state(L, m2, n_updates, seed):
+    """Chain state at the start: the same random stream and random initial field as cluster.cluster_chain."""
+    rng = np.random.default_rng([seed, L, round(-m2 * 1e5)])
+    return dict(phi=rng.normal(size=(L, L)), t=0, rec=np.empty((n_updates, 2)), n_accept=0, rng=rng)
+
+
+def advance(state, L, m2, lam, n_updates, n_therm, step, n):
+    """Runs up to n more updates of the chain in place (stops at n_therm + n_updates), recording M and sum phi^2."""
+    masks = [checkerboard_np(L, 0), checkerboard_np(L, 1)]
+    for _ in range(min(n, n_therm + n_updates - state["t"])):
+        state["phi"], n_acc = update(state["phi"], masks, m2, lam, step, state["rng"])
+        if state["t"] >= n_therm:
+            state["rec"][state["t"] - n_therm] = m_and_phi2(state["phi"])
+            state["n_accept"] += n_acc
+        state["t"] += 1
+
+
+def save_state(path, state, params):
+    """Writes to a temporary file, then renames: a crash mid-write cannot corrupt the previous checkpoint."""
+    tmp = path.with_suffix(".tmp")
+    with open(tmp, "wb") as f:
+        np.savez(f, phi=state["phi"], t=state["t"], rec=state["rec"][: max(state["t"] - params[3], 0)],
+                 n_accept=state["n_accept"], rng=json.dumps(state["rng"].bit_generator.state), params=np.array(params))
+    os.replace(tmp, path)
+
+
+def load_state(path, params, n_updates):
+    c = np.load(path)
+    # A checkpoint from different parameters must not be resumed silently.
+    assert np.array_equal(c["params"], np.array(params)), f"{path.name} was written with other parameters"
+    rng = np.random.default_rng()
+    rng.bit_generator.state = json.loads(str(c["rng"]))
+    rec = np.empty((n_updates, 2))
+    rec[: len(c["rec"])] = c["rec"]
+    return dict(phi=c["phi"], t=int(c["t"]), rec=rec, n_accept=int(c["n_accept"]), rng=rng)
+
+
 def run_point(name, L, m2, lam, n_updates, n_therm, step, seed):
-    out = point_file(name, L, m2)
+    out, ck = point_file(name, L, m2), checkpoint_file(name, L, m2)
     if out.exists():
         print(f"L={L:3d}  m2={m2:+.5f}  already done ({out.name})", flush=True)
         return
     t0 = time.time()
-    rng = np.random.default_rng([seed, L, round(-m2 * 1e5)])
-    rec, snap, acc = cluster_chain(L, m2, lam, n_updates, n_therm, step, rng, m_and_phi2)
-    np.savez(out, M=rec[:, 0], phi2=rec[:, 1], snap=snap, acc=acc, m2=m2, lam=lam, n_updates=n_updates,
-             n_therm=n_therm, step=step, seed=seed, seconds=time.time() - t0)
+    params = (m2, lam, n_updates, n_therm, step, seed)
+    if ck.exists():
+        state = load_state(ck, params, n_updates)
+        print(f"L={L:3d}  m2={m2:+.5f}  resuming at update {state['t']} of {n_therm + n_updates}", flush=True)
+    else:
+        state = new_state(L, m2, n_updates, seed)
+    while state["t"] < n_therm + n_updates:
+        advance(state, L, m2, lam, n_updates, n_therm, step, CHECKPOINT_EVERY)
+        save_state(ck, state, params)
+    rec, acc = state["rec"], state["n_accept"] / (n_updates * L * L)
+    np.savez(out, M=rec[:, 0], phi2=rec[:, 1], snap=state["phi"], acc=acc, m2=m2, lam=lam, n_updates=n_updates,
+             n_therm=n_therm, step=step, seed=seed, seconds=time.time() - t0)  # seconds: since the last (re)start
+    ck.unlink()
     print(f"L={L:3d}  m2={m2:+.5f}  acc={acc:.3f}  <M^2>={np.mean(rec[:, 0] ** 2):.5f}  ({time.time() - t0:.0f} s)", flush=True)
 
 

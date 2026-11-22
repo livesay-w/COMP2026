@@ -40,7 +40,7 @@ from reweight import Reweighter, u4_chi
 from scan import crossing, doubling_pairs
 
 RUNS = Path(__file__).parent / "runs"
-CLUSTER_RUNS = ("prod",)  # add "prod256" once cluster_scan.py prod256 has finished
+CLUSTER_RUNS = ("prod", "prod256")  # L = 16-128, then L = 256
 THIN = 2  # keep every 2nd cluster sample for the reweighting (check_reweight.py [4])
 COLS = ("m2_x", "U4_x", "chi_L", "chi_2L", "dse",           # main: reweighted (cluster) or linear (Metropolis)
         "m2_x_lin", "dse_lin", "m2_x_quad", "dse_quad")    # cross-checks: linear and quadratic interpolation
